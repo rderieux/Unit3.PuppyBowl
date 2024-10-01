@@ -18,13 +18,13 @@ const puppyApi = api.injectEndpoints({
   endpoints: (build) => ({
     getPuppies: build.query({
       query: () => "players",
-      transformResponse: (response) => response.data,
+      transformResponse: (response) => response.data.players,
       transformErrorResponse: (response) => response.data.error,
       providesTags: ["Puppy"],
     }),
     getPuppy: build.query({
       query: (id) => "players/" + id,
-      transformResponse: (response) => response.data,
+      transformResponse: (response) => response.data.player,
       transformErrorResponse: (response) => response.data.error,
       providesTags: ["Puppy"],
     }),
